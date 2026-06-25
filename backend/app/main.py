@@ -10,6 +10,7 @@ from fastapi.responses import JSONResponse
 from sqlalchemy.exc import SQLAlchemyError
 
 from app.database import init_db
+from app.seed import seed_database
 from app.routers.action_items import router as action_items_router
 from app.routers.meetings import router as meetings_router
 from app.routers.search import router as search_router
@@ -70,9 +71,11 @@ async def generic_exception_handler(request: Request, exc: Exception):
     )
 
 
+
 @app.on_event("startup")
 def on_startup() -> None:
     init_db()
+    seed_database()
 
 
 @app.get("/health")
