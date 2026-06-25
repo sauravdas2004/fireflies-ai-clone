@@ -17,25 +17,59 @@ A full-stack clone of **Fireflies.ai** built using **Next.js**, **FastAPI**, **S
 
 ---
 
-# 📸 Screenshots
-
-> Add your screenshots inside a folder named `screenshots`.
+# 📸 Application Screenshots
 
 ## Dashboard
 
 ![Dashboard](screenshots/dashboard.png)
 
+---
+
 ## Meeting Details
 
-![Meeting Details](screenshots/meeting-details.png)
+![Meeting Details](screenshots/meetingDetails.png)
+
+---
 
 ## AI Summary
 
-![AI Summary](screenshots/summary.png)
+![AI Summary](screenshots/AIsummary.png)
+
+---
 
 ## Transcript
 
 ![Transcript](screenshots/transcript.png)
+
+---
+
+## Fireflies Experience
+
+### Experience 1
+
+![Experience 1](screenshots/FirefliesExperience1.png)
+
+### Experience 2
+
+![Experience 2](screenshots/FirefliesExperience2.png)
+
+---
+
+## Meeting Management
+
+### Create Meeting
+
+![Meeting Management](screenshots/MeetingManagement1.png)
+
+### Manage Meeting
+
+![Meeting Management](screenshots/MeetingManagement2.png)
+
+---
+
+## Placeholder Section
+
+![Placeholder](screenshots/PlaceholderSection.png)
 
 ---
 
