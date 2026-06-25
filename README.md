@@ -1,55 +1,293 @@
-# Fireflies Clone
+# 🎙️ Fireflies AI Clone
 
-Compact clone of Fireflies.ai — meeting transcription, summaries, and action items.
+A full-stack clone of **Fireflies.ai** built using **Next.js**, **FastAPI**, **SQLAlchemy**, and **SQLite**. The application provides an interactive dashboard for viewing meetings, transcripts, AI summaries, participants, tags, and action items.
 
-## Project layout
+---
 
-- `backend/` — FastAPI application (SQLAlchemy + SQLite).
-- `frontend/` — Next.js 14 (App Router), TypeScript, Tailwind CSS.
+## 🚀 Live Demo
 
-## Local setup
+### Frontend
+👉 https://fireflies-ai-clone-ten.vercel.app
 
-Backend
+### Backend API
+👉 https://fireflies-ai-clone-dtxd.onrender.com
+
+### Swagger API Documentation
+👉 https://fireflies-ai-clone-dtxd.onrender.com/docs
+
+---
+
+# 📸 Screenshots
+
+> Add your screenshots inside a folder named `screenshots`.
+
+## Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
+## Meeting Details
+
+![Meeting Details](screenshots/meeting-details.png)
+
+## AI Summary
+
+![AI Summary](screenshots/summary.png)
+
+## Transcript
+
+![Transcript](screenshots/transcript.png)
+
+---
+
+# ✨ Features
+
+- 📋 Meeting Dashboard
+- 🔍 Search meetings by title and transcript
+- 🏷️ Tag filtering
+- 👥 Participant information
+- 📝 AI-generated meeting summaries
+- 📄 Transcript viewer
+- ✅ Action items
+- 📤 Export functionality
+- 🌙 Dark UI inspired by Fireflies.ai
+- 📱 Responsive design
+- 📚 Swagger API Documentation
+
+---
+
+# 🛠️ Tech Stack
+
+## Frontend
+
+- Next.js 14
+- TypeScript
+- Tailwind CSS
+
+## Backend
+
+- FastAPI
+- SQLAlchemy
+- Pydantic
+- SQLite
+
+## Deployment
+
+- Vercel
+- Render
+- Docker
+
+---
+
+# 📂 Project Structure
+
+```
+fireflies-ai-clone/
+│
+├── backend/
+│   ├── app/
+│   │   ├── models/
+│   │   ├── routers/
+│   │   ├── schemas/
+│   │   ├── services/
+│   │   ├── database.py
+│   │   ├── seed.py
+│   │   └── main.py
+│   │
+│   ├── Dockerfile
+│   └── requirements.txt
+│
+├── frontend/
+│   ├── app/
+│   ├── components/
+│   ├── lib/
+│   ├── styles/
+│   ├── package.json
+│   └── next.config.js
+│
+├── README.md
+└── .gitignore
+```
+
+---
+
+# ⚙️ Local Setup
+
+## 1️⃣ Clone Repository
 
 ```bash
+git clone https://github.com/sauravdas2004/fireflies-ai-clone.git
+
+cd fireflies-ai-clone
+```
+
+---
+
+## 2️⃣ Backend Setup
+
+```bash
+cd backend
+
 python -m venv .venv
+```
+
+### Windows
+
+```bash
+.venv\Scripts\activate
+```
+
+### Linux / macOS
+
+```bash
 source .venv/bin/activate
-pip install -r backend/requirements.txt
-# Initialize DB + seed
-python -c "from app import seed; seed.seed_database()"
-# Run dev server
-uvicorn app.main:app --reload --port 8000
+```
+
+Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the backend
+
+```bash
+uvicorn app.main:app --reload
+```
+
+Backend will run on
+
+```
+http://localhost:8000
+```
+
+Swagger Documentation
+
+```
+http://localhost:8000/docs
+```
+
+---
+
+## 3️⃣ Frontend Setup
+
+```bash
+cd frontend
+
+npm install
+
+npm run dev
 ```
 
 Frontend
 
-```bash
-cd frontend
-npm install
-npm run dev
-# build
-npm run build
+```
+http://localhost:3000
 ```
 
-## Environment
+---
 
-- `NEXT_PUBLIC_API_BASE_URL` defaults to `http://localhost:8000` (see `frontend/.env.example`).
-- Backend CORS origins default to `http://localhost:3000`.
+# 🌍 Environment Variables
 
-## Deployment notes
+## Frontend (.env.local)
 
-- Frontend can be deployed to Vercel; point the project root at the `frontend/` directory or use the included `frontend/vercel.json`.
-- Backend can be containerized using `backend/Dockerfile` and deployed to any container host.
+```env
+NEXT_PUBLIC_API_BASE_URL=http://localhost:8000
+```
 
-## Phase status
+For production
 
-- Phase 1: DB models + seed — completed.
-- Phase 2: FastAPI backend — completed.
-- Phase 3: Next.js frontend — completed.
-- Phase 4: polish — partially completed (tags, export, URL filters). Remaining: dark mode, global search UI, optional LLM QA.
-- Phase 5: deployment & README — this README and basic deployment files were added.
+```env
+NEXT_PUBLIC_API_BASE_URL=https://fireflies-ai-clone-dtxd.onrender.com
+```
 
-## Helpful commands
+---
 
-- Run frontend build: `npm run build --prefix frontend`
-- Run backend seed: `python -m backend.app.seed` (or see earlier seed command)
+## Backend
+
+```env
+CORS_ORIGINS=http://localhost:3000
+```
+
+Production
+
+```env
+CORS_ORIGINS=http://localhost:3000,https://fireflies-ai-clone-ten.vercel.app
+```
+
+---
+
+# 🚀 Deployment
+
+## Frontend
+
+Hosted on **Vercel**
+
+Project Root
+
+```
+frontend/
+```
+
+---
+
+## Backend
+
+Hosted on **Render**
+
+- Docker Deployment
+- Automatic Database Seeding
+- SQLite Database
+- Swagger API Enabled
+
+---
+
+# 📡 API Endpoints
+
+| Method | Endpoint | Description |
+|---------|----------|-------------|
+| GET | /meetings | Get all meetings |
+| POST | /meetings | Create meeting |
+| GET | /meetings/{id} | Get meeting details |
+| PUT | /meetings/{id} | Update meeting |
+| DELETE | /meetings/{id} | Delete meeting |
+| GET | /transcripts | Get transcripts |
+| GET | /summaries | Get AI summaries |
+| GET | /action-items | Get action items |
+| GET | /tags | Get tags |
+| GET | /search | Search meetings |
+
+Swagger Documentation
+
+https://fireflies-ai-clone-dtxd.onrender.com/docs
+
+---
+
+# 📈 Project Status
+
+| Module | Status |
+|---------|--------|
+| Database Models | ✅ |
+| Seed Data | ✅ |
+| REST API | ✅ |
+| Meeting Dashboard | ✅ |
+| Transcript Viewer | ✅ |
+| AI Summary | ✅ |
+| Action Items | ✅ |
+| Search | ✅ |
+| Docker Deployment | ✅ |
+| Render Deployment | ✅ |
+| Vercel Deployment | ✅ |
+
+---
+
+# 👨‍💻 Author
+
+**Saurav Das**
+
+GitHub
+
+https://github.com/sauravdas2004
+
+---
+
+# ⭐ If you like this project, consider giving it a star!
