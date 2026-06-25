@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: 246 248 252;
+  --color-panel: 255 255 255;
+  --color-panel-strong: 248 250 254;
+  --color-border: 224 229 239;
+  --color-text: 17 24 39;
+  --color-muted: 99 115 129;
+  --color-accent: 107 80 255;
+  --color-accent-soft: 236 232 255;
+}
+
+html.dark {
+  --color-bg: 8 15 30;
+  --color-panel: 15 23 42;
+  --color-panel-strong: 20 29 48;
+  --color-border: 39 51 82;
+  --color-text: 235 240 250;
+  --color-muted: 142 154 178;
+  --color-accent: 143 119 255;
+  --color-accent-soft: 56 45 96;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(107, 80, 255, 0.08), transparent 30%),
+    radial-gradient(circle at top right, rgba(41, 121, 255, 0.06), transparent 24%),
+    rgb(var(--color-bg));
+  color: rgb(var(--color-text));
+  font-family: var(--font-inter), Inter, system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgb(var(--color-accent) / 0.18);
+}

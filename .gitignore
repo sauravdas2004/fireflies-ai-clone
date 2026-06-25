@@ -1,0 +1,26 @@
+# Root virtual environment
+.venv/
+
+# Backend virtual environment
+backend/venv/
+
+# Python
+backend/__pycache__/
+backend/fireflies.db
+*.pyc
+
+# Node
+frontend/node_modules/
+frontend/.next/
+
+# Environment
+.env
+.env.*
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+*.tsbuildinfo
